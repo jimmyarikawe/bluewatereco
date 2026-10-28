@@ -21,7 +21,7 @@ export default function ContactForm() {
     const data = await res.json().catch(() => ({}));
     if (res.ok) {
       form.reset();
-      setStatus({ state: 'done', message: 'Thanks! Your message has been sent. We’ll be in touch soon.' });
+      setStatus({ state: 'done', message: 'Thanks! Your message has been sent. We’ve emailed you a confirmation and will be in touch soon.' });
     } else {
       setStatus({ state: 'error', message: data.error ?? 'Something went wrong. Please try again.' });
     }
