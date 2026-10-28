@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #1f4386;
+  --color-primary-dark: #17336a;
+  --color-dark: #2b354f;
+  --color-headline: #1f1f1f;
+  --color-body: #6e7a84;
+  --color-light: #f1f5ff;
+  --color-accent: #ffa800;
+  --color-brand-green: #7ac143;
+
+  --animate-ken-burns: ken-burns 12s ease-out infinite alternate;
+
+  @keyframes ken-burns {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white font-sans text-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-headline;
+  }
+}
+
+/* Blog post body (HTML from the old WordPress posts) */
+.prose-post p {
+  @apply mb-5 leading-[1.85];
+}
+.prose-post h2,
+.prose-post h3,
+.prose-post h4 {
+  @apply mt-10 mb-4 text-xl;
+}
+.prose-post strong {
+  @apply text-headline;
+}
+.prose-post ul,
+.prose-post ol {
+  @apply mb-5 list-disc space-y-2 pl-6;
+}
+.prose-post a {
+  @apply text-primary underline;
+}
